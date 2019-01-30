@@ -17,3 +17,6 @@ Route::get('/', 'PageController@index')->name('welcome');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('auth/google', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/google/callback', 'Auth\AuthController@handleProviderCallback');
